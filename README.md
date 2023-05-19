@@ -22,13 +22,13 @@ Please note that ARexx functions GetRexxVar and SetRexxVar are not yet working i
 
 ## How to create the library
 - Install [_amiga-debug_ Visual Studio Code Extension (fork with libraries support)](https://marketplace.visualstudio.com/items?itemName=JOB.amiga-debug-job)
-- Choose the menu "File->Open Folder..." and select the directory of this github archive
+- Choose the menu "File->Open Folder..." and select the directory of this github repository
 - Open `.vscode/launch.json` and make `"kickstart"` point to your *Kickstart 3.1* ROM and `"workbench"` to your *Workbench 3.1* floppy (.adf)
 - Hit <kbd>F5</kbd> to build and run unit testing (you should get the same screen as above)
 - Run the script `ar_alib.txt` (in a UNIX-like environment) from the obj directory to create the archive
 
 ## How to use the library
-In order to link your program with alib (using `-lalib`), you will have to declare and open the following libraries: Exec, intuition.library, dos.library, utility.library, graphics.library, commodities.library and icon.library.
+`libalib.a` is included in this repository. In order to link your program with it (using `-lalib`), you will have to declare and open the following libraries: Exec, intuition.library, dos.library, utility.library, graphics.library, commodities.library and icon.library.
 Also please note that if you use the option `"-fwhole-program"` in your `Makefile`, you'll have to mark all the libraries as `externally_visible`:\
 \_\_attribute\_\_((externally_visible)) struct ExecBase *SysBase;\
 \_\_attribute\_\_((externally_visible)) struct IntuitionBase *IntuitionBase;\
